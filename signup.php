@@ -61,7 +61,7 @@
                             <input name="name" id="name" type="text">
                         </div>
                         <div class="form-group">
-                            <label for="street">Street address</label>
+                            <label for="street">Street Address</label>
                             <input name="street" id="street" type="text">
                         </div>
                         <div class="form-group">
@@ -73,8 +73,12 @@
                             <input name="state" id="state" type="text">
                         </div>
                         <div class="form-group">
-                            <label for="Zipcode">Zipcode</label>
-                            <input name="Zipcode" id="Zipcode" type="text">
+                            <label for="zipcode">Zipcode</label>
+                            <input name="zipcode" id="zipcode" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country (full name, i.e. United States)</label>
+                            <input name="country" id="country" type="text">
                         </div>
                         <p>Positive or negative for COVID?</p>
                         <input type="radio" id="positive" name="covid_status" value=1>

@@ -42,6 +42,7 @@
     $city = $_POST['city'];
     $state = $_POST['state'];
     $zipcode = $_POST['zipcode'];
+    $country = $_POST['country'];
     $covid_status = $_POST['covid_status'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -51,7 +52,7 @@
       $statement = $db->prepare($query);
       $statement->execute();
       $statement->closecursor();
-      $query2 = "UPDATE country SET total_cases = total_cases+1 WHERE name = 'United States'";
+      $query2 = "UPDATE country SET total_cases = total_cases+1 WHERE name = '$country'";
       $statement2 = $db->prepare($query2);
       $statement2->execute();
       $statement2->closecursor();
@@ -66,7 +67,7 @@
 
     else
     {
-    $query = "INSERT INTO user (name, email, password, covid_status, current_location_street, current_location_city, current_location_state, current_location_zipcode) VALUES (:name, :email, :password, :covid_status, :current_location_street, :current_location_city, :current_location_state, :current_location_zipcode)";
+    $query = "INSERT INTO user (name, email, password, covid_status, current_location_street, current_location_city, current_location_state, current_location_zipcode, current_location_country) VALUES (:name, :email, :password, :covid_status, :current_location_street, :current_location_city, :current_location_state, :current_location_zipcode, :current_location_country)";
     $statement = $db->prepare($query);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':email', $email);
@@ -76,6 +77,7 @@
     $statement->bindValue(':current_location_city', $city);
     $statement->bindValue(':current_location_state', $state);
     $statement->bindValue(':current_location_zipcode', $zipcode);
+    $statement->bindValue(':current_location_country', $country);
     $statement->execute();
     $statement->closeCursor();
 
