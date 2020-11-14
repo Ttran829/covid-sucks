@@ -1,3 +1,7 @@
+<?php
+    require('covidsucks-connectdb.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -51,14 +55,30 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div style="margin:0 auto; width:600px; padding:20px; background:#f9f9f9; border-radius: 25px;">
-                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" onsubmit="return signUpValidate()" style="color:black; font-size: 18px; display:block">
+                    <form action="signup_add.php" method="POST" onsubmit="return signUpValidate()" style="color:black; font-size: 18px; display:block">
                         <div class="form-group">
-                        <label for="name">Full name</label>
-                        <input name="name" id="name" type="text">
+                            <label for="name">Full name</label>
+                            <input name="name" id="name" type="text">
                         </div>
                         <div class="form-group">
-                        <label for="email">Email</label>
-                        <input name="email" id="email" type="text">
+                            <label for="street">Street Address</label>
+                            <input name="street" id="street" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input name="city" id="city" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State (format: VA, MD, etc.)</label>
+                            <input name="state" id="state" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="Zipcode">Zipcode</label>
+                            <input name="Zipcode" id="Zipcode" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input name="email" id="email" type="text">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
@@ -68,7 +88,7 @@
                             <label for="re-password">Re-enter Password</label>
                             <input name="re-password" id="re-password" type="text">
                         </div>
-                        <button type="signup" class="btn btn-primary" style="padding: 15px 20px; font-size:18px">Sign Up</button>
+                        <button type="submit" class="btn btn-primary" style="padding: 15px 20px; font-size:18px">Sign Up</button>
                         </div>
                     </form>
                 </div>

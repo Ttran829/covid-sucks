@@ -1,7 +1,6 @@
-<?php session_start(); ?>
-
-<?php
-    include('signup.php');
+<?php 
+  session_start(); 
+  include('signup.php');
 ?>
 
 <?php
@@ -24,13 +23,13 @@
     }
 
 ?>
-  <?php
+<?php
   if ($_SERVER['REQUEST_METHOD'] == "POST")
   {
     require('covidsucks-connectdb.php');
-    $name = $_POST['Name'];
-    $email = $_POST['Email'];
-    $password = $_POST['Password'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     if (checkEmail($email) == true)
     {
@@ -43,8 +42,8 @@
     {
     $query = "INSERT INTO user (name, email, password) VALUES (:name, :email, :password)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':email', $email);
     $statement->bindValue(':name', $name);
+    $statement->bindValue(':email', $email);
     $statement->bindValue(':password', $password);
     $statement->execute();
     $statement->closeCursor();
@@ -57,4 +56,4 @@
     }
 
   }
-    ?>
+?>

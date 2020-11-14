@@ -1,10 +1,10 @@
 <?php
 
 // hostname
-$hostname = 'localhost:3306';
+$hostname = 'localhost:3307';
 
 // database name
-$dbname = 'covid_sucks';
+$dbname = 'covidsucks';
 
 // database credentials
 $username = 'root';
