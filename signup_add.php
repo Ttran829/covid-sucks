@@ -51,6 +51,10 @@
       $statement = $db->prepare($query);
       $statement->execute();
       $statement->closecursor();
+      $query2 = "UPDATE country SET total_cases = total_cases+1 WHERE name = 'United States'";
+      $statement2 = $db->prepare($query2);
+      $statement2->execute();
+      $statement2->closecursor();
     }
     
     if (checkEmail($email) == true)
