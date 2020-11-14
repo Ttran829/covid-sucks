@@ -28,7 +28,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a href="edit.html"><input type="submit" value="Edit" name="action" class="btn btn-primary" title="Edit Profile"></input></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a href="edit.php"><input type="submit" value="Edit Profile" name="action" class="btn btn-primary" title="Edit Profile" style="height:60px"></input></a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="logout.php">Logout</a></li>
                     </ul>
                 </div>

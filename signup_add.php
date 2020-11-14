@@ -6,20 +6,30 @@
 <?php
     function checkEmail($entry)
     {
-        echo "<p>in checkEmail</p>";
-        require('covidsucks-connectdb.php');
-        $query = "SELECT * FROM user";
+      require('covidsucks-connectdb.php');
+      $query = "SELECT * FROM user";
+      $statement = $db->prepare($query);
+      $statement->execute();
+      $results = $statement->fetchAll();
+      $statement->closecursor();
+
+      foreach ($results as $result)
+      {
+          if ($entry == $result['email']){
+              return true;
+              }
+      }
+    }
+
+    function incrementCases($covid_status, $city)
+    {
+      require ('covidsucks-connectdb.php');
+      if ($covid_status == 1) {
+        $query = "UPDATE city SET total_cases = total_cases+1 WHERE name = $city";
         $statement = $db->prepare($query);
         $statement->execute();
-        $results = $statement->fetchAll();
         $statement->closecursor();
-
-        foreach ($results as $result)
-        {
-            if ($entry == $result['email']){
-                return true;
-                }
-        }
+      }
     }
 
 ?>
@@ -35,6 +45,13 @@
     $covid_status = $_POST['covid_status'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+
+    if ($covid_status == 1) {
+      $query = "UPDATE city SET total_cases = total_cases+1 WHERE name = '$city'";
+      $statement = $db->prepare($query);
+      $statement->execute();
+      $statement->closecursor();
+    }
     
     if (checkEmail($email) == true)
     {
