@@ -1,4 +1,10 @@
+<?php session_start();
 
+if (!isset($_SESSION['session_user_id'])) {
+  echo "<script>location.href = 'login.php';</script>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,9 +44,9 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
+                <img class="masthead-avatar mb-5" src="assets/img/facemask.png" alt="" />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">(Name)</h1>
+                <h1 class="masthead-heading text-uppercase mb-0"><?php echo $_SESSION['session_name'] ?></h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
