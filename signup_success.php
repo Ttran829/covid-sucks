@@ -19,101 +19,6 @@
                 display: block;
                 margin : 0 auto;
         }
-        /* The switch - the box around the slider */
-        .switch {
-        position: relative;
-        display: inline-block;
-        width: 120px;
-        height: 60px;
-        }
-
-        /* Hide default HTML checkbox */
-        .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-        }
-
-        /* The slider */
-        .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-        }
-
-        .slider:before {
-        position: absolute;
-        content: "";
-        height: 53px;
-        width: 54px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-        }
-
-        input:checked + .slider {
-        background-color: #2c3e50;
-
-        }
-
-        input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-        }
-
-        input:checked + .slider:before {
-        -webkit-transform: translateX(59px);
-        -ms-transform: translateX(59px);
-        transform: translateX(59px);
-        }
-        .on {
-        display: none;
-        }
-
-        .on,
-        .off {
-        color: white;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 25%;
-        left: 25%;
-        font-size: 24px;
-        font-family: Verdana, sans-serif;
-        }
-
-        .on {
-        top: 30px;
-        }
-
-        .off {
-        left: auto;
-        right: -5px;
-        top: 30px;
-        }
-
-        input:checked+ .slider .on {
-        display: block;
-        }
-
-        input:checked + .slider .off {
-        display: none;
-        }
-
-        /* Rounded sliders */
-        .slider.round {
-        border-radius: 34px;
-        }
-
-        .slider.round:before {
-        border-radius: 50%;
-        }
     </style>
     </head>
     <body id="page-top">
@@ -140,17 +45,10 @@
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
-            </div>
-            <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0" style="font-size:35px">Now, just one final thing... Are you positive or negative for COVID?</p>
-            &nbsp;
-            <label class="switch">
-                <input type="checkbox" id='switchValue'>
-                <div class="slider">
-                    <span class="on">YES</span>
-                    <span class="off">NO</span>
                 </div>
-            </label>
+                <p style="font-size:30px">Press the button below to log in</p>
+                &nbsp;
+                <a class="btn btn-lg" href="login.php" style="background-color:#2c3e50;; width:150px; height:60px; font-size:25px"role="button"><font color="white">Log In</font></a>
         </header>
         <!-- Contact Section-->
         <!-- Copyright Section-->
@@ -172,9 +70,7 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script>
-            var isChecked=document.getElementById("switchValue").checked;
-            console.log(isChecked);
-            alert(isChecked);
+            var isChecked=document.getElementByClassName("on")
         </script>
     </body>
 </html>

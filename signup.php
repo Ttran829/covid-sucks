@@ -61,7 +61,7 @@
                             <input name="name" id="name" type="text">
                         </div>
                         <div class="form-group">
-                            <label for="street">Street Address</label>
+                            <label for="street">Street address</label>
                             <input name="street" id="street" type="text">
                         </div>
                         <div class="form-group">
@@ -76,6 +76,11 @@
                             <label for="Zipcode">Zipcode</label>
                             <input name="Zipcode" id="Zipcode" type="text">
                         </div>
+                        <p>Positive or negative for COVID?</p>
+                        <input type="radio" id="positive" name="covid_status" value=1>
+                        <label for="positive">Positive</label><br>
+                        <input type="radio" id="negative" name="covid_status" value=0>
+                        <label for="negative">Negative</label><br>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input name="email" id="email" type="text">
@@ -85,7 +90,7 @@
                             <input name="password" id="password" type="text">
                         </div>
                         <div class="form-group">
-                            <label for="re-password">Re-enter Password</label>
+                            <label for="re-password">Re-enter password</label>
                             <input name="re-password" id="re-password" type="text">
                         </div>
                         <button type="submit" class="btn btn-primary" style="padding: 15px 20px; font-size:18px">Sign Up</button>

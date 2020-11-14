@@ -28,9 +28,14 @@
   {
     require('covidsucks-connectdb.php');
     $name = $_POST['name'];
+    $street = $_POST['street'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zipcode = $_POST['zipcode'];
+    $covid_status = $_POST['covid_status'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-
+    
     if (checkEmail($email) == true)
     {
     echo "<script type='text/javascript'>
@@ -40,11 +45,16 @@
 
     else
     {
-    $query = "INSERT INTO user (name, email, password) VALUES (:name, :email, :password)";
+    $query = "INSERT INTO user (name, email, password, covid_status, current_location_street, current_location_city, current_location_state, current_location_zipcode) VALUES (:name, :email, :password, :covid_status, :current_location_street, :current_location_city, :current_location_state, :current_location_zipcode)";
     $statement = $db->prepare($query);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':email', $email);
     $statement->bindValue(':password', $password);
+    $statement->bindValue(':covid_status', $covid_status);
+    $statement->bindValue(':current_location_street', $street);
+    $statement->bindValue(':current_location_city', $city);
+    $statement->bindValue(':current_location_state', $state);
+    $statement->bindValue(':current_location_zipcode', $zipcode);
     $statement->execute();
     $statement->closeCursor();
 
