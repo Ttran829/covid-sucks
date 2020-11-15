@@ -69,6 +69,15 @@
     {
     $query = "INSERT INTO user (name, email, password, covid_status, current_location_street, current_location_city, current_location_state, current_location_zipcode, current_location_country) VALUES (:name, :email, :password, :covid_status, :current_location_street, :current_location_city, :current_location_state, :current_location_zipcode, :current_location_country)";
     $statement = $db->prepare($query);
+    $statement->bindValue(':name', $name);
+    $statement->bindValue(':email', $email);
+    $statement->bindValue(':password', $password);
+    $statement->bindValue(':covid_status', $covid_status);
+    $statement->bindValue(':current_location_street', $street);
+    $statement->bindValue(':current_location_city', $city);
+    $statement->bindValue(':current_location_state', $state);
+    $statement->bindValue(':current_location_zipcode', $zipcode);
+    $statement->bindValue(':current_location_country', $country);
     $statement->execute();
     $statement->closeCursor();
 
