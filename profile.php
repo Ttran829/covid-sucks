@@ -2,6 +2,7 @@
 
 if (!isset($_SESSION['session_user_id'])) {
   echo "<script>location.href = 'login.php';</script>";
+  header("Refresh:0");
 }
 
 ?>
