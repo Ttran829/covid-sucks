@@ -35,7 +35,7 @@ if (!isset($_SESSION['session_user_id'])) {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item mx-0 mx-lg-1"><a href="profile.php"><input type="submit" value="Save" name="action" class="btn btn-primary" title="Save Changes"></input></a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><input type="submit" value="Save" name="action" class="btn btn-primary" title="Save Changes"></input></li>
                         </ul>
                     </div>
                 </div>
@@ -89,7 +89,6 @@ if (!isset($_SESSION['session_user_id'])) {
                                     <input class="form-control" name = "country" id="country" type="text" placeholder="<?php echo $_SESSION['session_current_location_country'] ?>" />
                                 </div>  
                             </div>
-                            <button type="submit" class="btn btn-primary" style="padding: 15px 20px; font-size:18px">Sign Up</button>
                         </div>
                     </div>
                 </div>

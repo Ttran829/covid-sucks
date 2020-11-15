@@ -15,9 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     $state = $_POST['state'];
     $zipcode = $_POST['zipcode'];
     $country = $_POST['country'];
+    $session = $_SESSION['session_user_id'];
 
-    $query = "UPDATE user SET covid_status='$covid_status' current_location_street='$street' current_location_city='$city'
-                    current_location_state='$state' current_location_zipcode='$zipcode' current_location_country='$country'";
+    $query = "UPDATE user SET covid_status='$covid_status', current_location_street='$street', current_location_city='$city',
+                    current_location_state='$state', current_location_zipcode='$zipcode', current_location_country='$country' WHERE user_id = '$session'";
     $statement = $db->prepare($query);
     $statement->bindValue(':covid_status', $covid_status);
     $statement->bindValue(':current_location_street', $street);
@@ -27,6 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     $statement->bindValue(':current_location_country', $country);
     $statement->execute();
     $statement->closeCursor();
+
+    $_SESSION['session_covid_status'] = $covid_status;
+    $_SESSION['session_current_location_street'] = $street;
+    $_SESSION['session_current_location_city'] = $city;
+    $_SESSION['session_current_location_state'] = $state;
+    $_SESSION['session_current_location_zipcode'] = $zipcode;
+    $_SESSION['session_current_location_country'] = $country;
 
     echo("<script>location.href = 'profile.php';</script>");
 }
