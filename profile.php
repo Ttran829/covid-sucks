@@ -54,7 +54,7 @@ if (!isset($_SESSION['session_user_id'])) {
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Covid Status: </p>
+                <p class="masthead-subheading font-weight-light mb-0">Covid Status: <?php echo $_SESSION['session_covid_status'] ?></p>
             </div>
         </header>
         <!-- About Section -->
@@ -72,16 +72,19 @@ if (!isset($_SESSION['session_user_id'])) {
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">State:</p></div>  
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">Street: <?php echo $_SESSION['session_current_location_street'] ?> </p> </div>  
                         </div>
                         <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">City:</p></div>  
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">City: <?php echo $_SESSION['session_current_location_city'] ?> </p></div>  
                         </div>
                         <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">Street:</p></div>  
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">State: <?php echo $_SESSION['session_current_location_state'] ?> </p></div>  
                         </div>
                         <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">Zip Code:</p></div>  
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">Zip Code: <?php echo $_SESSION['session_current_location_zipcode'] ?> </p></div>  
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><p class="lead">Country: <?php echo $_SESSION['session_current_location_country'] ?> </p> </div>  
                         </div>
                     </div>
                 </div>
