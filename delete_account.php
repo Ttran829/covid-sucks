@@ -18,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     $statement->execute();      // runs query
     $statement->closeCursor();
 
+    session_destroy();
+
     echo("<script>location.href = 'login.php';</script>");
 }
 
