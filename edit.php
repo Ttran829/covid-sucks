@@ -93,7 +93,14 @@ if (!isset($_SESSION['session_user_id'])) {
                     </div>
                 </div>
             </header>
-            
+        </form>
+        <form action="delete_account.php" method="POST">
+            <section class="page-section bg-primary text-white mb-0 portfolio">
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-xl btn-outline-light">Delete Account</button>
+                </div>
+            </section>
+        </form>
             <!-- Copyright Section-->
             <div class="copyright py-4 text-center text-white">
                 <div class="container"><small>Copyright © Your Website 2020</small></div>
@@ -112,6 +119,5 @@ if (!isset($_SESSION['session_user_id'])) {
             <script src="assets/mail/contact_me.js"></script>
             <!-- Core theme JS-->
             <script src="js/scripts.js"></script>
-        </form>
     </body>
 </html>
