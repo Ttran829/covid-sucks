@@ -51,7 +51,7 @@
     $_SESSION['session_email'] = $email;
     $_SESSION['session_password'] = $password;
 
-    echo("<script>location.href = 'profile.php';</script>");
+    echo("<script>location.href = 'dashboard.php';</script>");
     }
 
   }
