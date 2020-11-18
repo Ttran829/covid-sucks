@@ -36,6 +36,7 @@ if (!isset($_SESSION['session_user_id'])) {
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a href="edit.php"><input type="submit" value="Edit Profile" name="action" class="btn btn-primary" title="Edit Profile" style="height:60px"></input></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="dashboard.php">Dashboard</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="logout.php">Logout</a></li>
                     </ul>
                 </div>
@@ -163,7 +164,7 @@ if (!isset($_SESSION['session_user_id'])) {
         </section>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Your Website 2020</small></div>
+            <div class="container"><small>Copyright © Covid Sucks 2020</small></div>
         </div>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed">
